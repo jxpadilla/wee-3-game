@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Psychic Game</title>
+
+</head>
+<body>
+
+    <h2>The Psychic Game</h2>
+    <p>Press a Letter to Guess the Letter I'm Thinking Of</p>
+
+      <hr>  
+      <div id="game">
+    
+
+      </div>
+
+
+ 
+<script type="text/javascript">
+
+// Sets the computer choices 
+    var letterToGuess = ['q'];
+
+// Sets the counts to 0 except for remaining guesses
+    var wins = 0;
+    var losses = 0;
+    var letterGuesses = 0;
+    var remainGuesses = 10;
+
+
+    document.onkeyup = function(event) {
+    var letterGuesses = String.fromCharCode(event.keyCode).toLowerCase();
+    console.log(letterGuesses);
+
+      if (letterGuesses == "q") {
+        wins++;
+        alert("You win.")
+
+      } else {
+        losses++;
+        remainGuesses = remainGuesses-1;
+      }
+
+      
+
+//Taking counts & displaying them in HTML
+    
+    var html = "<p>Wins: " + wins + "<p>Losses: " + losses + "<p>Remaining Guesses: " + remainGuesses;
+
+//Placing the HTML into the game ID
+    document.querySelector("#game").innerHTML = html;
+    
+
+     
+}
+
+
+
+
+
+
+
+
+
+
+/*    var numberToGuess = 53;
+
+    var counter = 0;
+
+    var numbers = [10, 5, 3, 7];
+
+    ('#number').text(numberToGuess);
+
+    for (var i=0; i< numbers.length; i++){
+
+      
+    }
+
+    ('.crystalImage').on('click', function(){
+      counter = counter + parseInt($(this).data('num'));
+
+      $('#yourNumber').text(counter);
+      
+      if (counter == numberToGuess){
+        alert('You won!!!!');
+      }else if( counter > numberToGuess){
+        alert('You lost!');
+      }
+    });
+
+
+
+
+
+*/
+</script>
+</body>
+</html>
